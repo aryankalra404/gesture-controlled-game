@@ -1,12 +1,12 @@
 # 🎮 Gesture Controlled Shooting Game
 
-A real-time gesture-controlled arcade shooter built on the **ESP32** microcontroller. Players control a cannon using hand gestures detected via an **ultrasonic sensor**, fire projectiles using an **IR sensor**, and experience physical feedback through a **relay-triggered mist maker/humidifier** and a **NeoPixel LED strip** — all rendered in a browser over Wi-Fi.
+A real-time gesture-controlled arcade shooter built on the **ESP32** microcontroller. Players control a cannon using hand gestures detected via an **ultrasonic sensor**, fire projectiles using an **IR sensor**, and experience physical feedback through a **relay-triggered mist maker/humidifier** and a **NeoPixel LED strip** - all rendered in a browser over Wi-Fi.
 
 ---
 
 ## 📸 Demo
 
-https://github.com/aryankalra404/gesture-controlled-game/raw/main/demo.mp4
+https://github.com/aryankalra404/gesture-controlled-game/blob/main/demo.mp4
 
 > _Connect to the ESP32's Wi-Fi hotspot → open browser → play with your hands in the air._
 
@@ -14,15 +14,15 @@ https://github.com/aryankalra404/gesture-controlled-game/raw/main/demo.mp4
 
 ## ✨ Features
 
-- 🖐️ **Gesture-based movement** — ultrasonic distance sensor maps hand position to cannon X-axis
-- 🔫 **IR sensor firing** — hold hand over IR sensor to shoot bullets
-- 💡 **NeoPixel LED feedback** — 15-LED strip tracks cannon position; turns red on Game Over
-- 💨 **Mist maker / humidifier effect** — relay activates a mist maker 1 second after Game Over; turns off when player restarts
-- 🌐 **WebSocket real-time communication** — ~80ms update loop between ESP32 and browser
-- 🎮 **Canvas-based game** — cannon, bullets, monsters, explosions with progressive difficulty
-- 👤 **User auth + leaderboard** — client-side login/register with localStorage high-score tracking
-- 🔊 **Sound effects** — firing, explosion, game-over, and steam audio
-- 📱 **Responsive UI** — works on desktop and mobile browsers
+-  **Gesture-based movement** — ultrasonic distance sensor maps hand position to cannon X-axis
+-  **IR sensor firing** — hold hand over IR sensor to shoot bullets
+-  **NeoPixel LED feedback** — 15-LED strip tracks cannon position; turns red on Game Over
+-  **Mist maker / humidifier effect** — relay activates a mist maker 1 second after Game Over; turns off when player restarts
+-  **WebSocket real-time communication** — ~80ms update loop between ESP32 and browser
+-  **Canvas-based game** — cannon, bullets, monsters, explosions with progressive difficulty
+-  **User auth + leaderboard** — client-side login/register with localStorage high-score tracking
+-  **Sound effects** — firing, explosion, game-over, and steam audio
+-  **Responsive UI** — works on desktop and mobile browsers
 
 ---
 
@@ -36,7 +36,7 @@ aryankalra404-gesture-controlled-game/
 │   ├── script.js           # Game logic, WebSocket client, asset loading
 │   └── style.css           # Dark-themed responsive styling
 └── src/
-    └── main.cpp            # ESP32 firmware — sensors, WebSocket server, LEDs, relay
+    └── main.cpp            # ESP32 firmware - sensors, WebSocket server, LEDs, relay
 ```
 
 > **Note:** Game assets (images + audio) are included in `data/` and uploaded to the ESP32 flash filesystem.
@@ -49,9 +49,9 @@ aryankalra404-gesture-controlled-game/
 |---|---|---|
 | ESP32 Dev Board | — | Any standard 38-pin ESP32 |
 | HC-SR04 Ultrasonic Sensor | TRIG: 26, ECHO: 27 | Detects hand distance (5–25 cm range) |
-| IR Sensor | 25 | Active LOW — triggers firing |
+| IR Sensor | 25 | Active LOW - triggers firing |
 | NeoPixel LED Strip | 19 | 15 LEDs, WS2812B |
-| Relay Module | 23 | Active LOW — triggers mist maker/humidifier |
+| Relay Module | 23 | Active LOW - triggers mist maker/humidifier |
 | Power Supply | — | 5V for NeoPixels; 3.3V logic for ESP32 |
 
 ---
@@ -93,7 +93,7 @@ pip install platformio
 Connect components to the ESP32 as per the pin table above. Ensure:
 - Relay module is **active LOW** (relay OFF = `HIGH` signal)
 - NeoPixel data line has a **300–500Ω resistor** inline
-- Ultrasonic sensor and ESP32 share **common GND**
+- Ultrasonic sensor, relay module, and ESP32 share **common GND**
 
 ### 4. Upload Filesystem (Web Files)
 
@@ -142,8 +142,8 @@ WebSocket server started on port 81
 |---|---|
 | **Move cannon** | Move hand left/right above ultrasonic sensor (5–25 cm range) |
 | **Fire** | Cover the IR sensor with your hand |
-| **Game Over** | A monster reaches the bottom — mist maker turns on after 1 second |
-| **Restart** | Click "Play Again" — mist maker turns off, game resets |
+| **Game Over** | A monster reaches the bottom - mist maker turns on after 1 second |
+| **Restart** | Click "Play Again" - mist maker turns off, game resets |
 
 The LED strip mirrors your cannon's position in real time. On game over, it turns **solid red** and the mist maker activates after a 1-second delay. It turns off when the player clicks "Play Again".
 
@@ -216,23 +216,17 @@ lib_deps =
 
 ## ⚠️ Known Limitations
 
-- **User data is stored in `localStorage`** — clearing browser data will erase accounts and scores
-- **Single-player only** — WebSocket broadcasts to all connected clients simultaneously
-- **No WPA2 Enterprise** — hotspot uses a simple shared password
-- **Ultrasonic sensor is sensitive to angle** — keep hand parallel and within 5–25 cm for best results
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+- **User data is stored in `localStorage`**: clearing browser data will erase accounts and scores
+- **Single-player only**: WebSocket broadcasts to all connected clients simultaneously
+- **No WPA2 Enterprise**: hotspot uses a simple shared password
+- **Ultrasonic sensor is sensitive to angle**: keep hand parallel and within 5–25 cm for best results
 
 ---
 
 ## 📄 License
 
-This project is open source. Add your preferred license (e.g. MIT) here.
+MIT
 
 ---
 
-_Built with ❤️ using ESP32, PlatformIO, and vanilla JS canvas._
+_Made this in November 2025 (during my first sem) · Published on GitHub: May 2026_
