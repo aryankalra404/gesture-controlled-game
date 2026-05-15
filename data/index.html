@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gesture Shooter Game</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div id="loginOverlay">
+    <div id="loginBox">
+      <form id="loginForm">
+        <h3>Login</h3>
+        <input type="text" id="loginUser" placeholder="Username" required>
+        <input type="password" id="loginPass" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p class="form-switch">Need an account? <a href="#" id="showRegister">Register</a></p>
+      </form>
+      <form id="registerForm" class="hidden">
+        <h3>Register</h3>
+        <input type="text" id="registerUser" placeholder="Username" required>
+        
+        <p class="form-hint">
+          * The username must start with a letter (A–Z or a–z).<br>
+          * It can contain letters, numbers, and underscores (_) only.<br>
+          * It cannot start with a number.<br>
+          * No other symbols or spaces are allowed.<br>
+          * The length must be between 5 and 15 characters.
+        </p>
+        <input type="password" id="registerPass" placeholder="Password" required>
+        <button type="submit">Register</button>
+        <p class="form-switch">Have an account? <a href="#" id="showLogin">Login</a></p>
+      </form>
+      <p id="authError"></p>
+    </div>
+  </div>
+
+  <div id="gameContainer" class="hidden">
+
+    <div class="game-column">
+      <h2>Gesture Controlled Shooting Game</h2>
+    
+      <div id="userInfo">
+        <span id="welcomeMsg"></span>
+        <button id="logoutBtn">Logout</button>
+      </div>
+
+      <h3 id="score">Score: 0</h3>
+      <div style="position:relative; display:inline-block;">
+<canvas id="game" width="550" height="550"></canvas>
+        <div id="overlay">
+          <div id="gameOverText">💥 Game Over 💥</div>
+          <div id="finalScore"></div>
+          <button id="restartBtn">Play Again</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="leaderboard" class="leaderboard-column">
+      <h3>Leaderboard</h3>
+      <ul id="highScoreList">
+        </ul>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
