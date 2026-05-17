@@ -6,7 +6,7 @@ A real-time gesture-controlled arcade shooter built on the **ESP32** microcontro
 
 ## 📸 Demo
 
-https://github.com/user-attachments/assets/d07e46ac-a6f8-4ad5-bb23-e8f64d67334e
+https://github.com/user-attachments/assets/267e7ef6-5ebf-4816-8cf2-380598058fa7
 
 > _Connect to the ESP32's Wi-Fi hotspot → open browser → play with your hands in the air._
 
